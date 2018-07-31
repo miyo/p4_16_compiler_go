@@ -71,6 +71,8 @@ const (
 	OUT        = "OUT"
 	METADATA   = "METADATA"
 
+	KEYWORD = "KEYWORD"
+
 	STRING              = "STRING"
 	SINGLE_QUOTE_STRING = "SINGLE_QUOTE_STRING"
 
@@ -79,26 +81,44 @@ const (
 )
 
 var keywords = map[string]TokenType{
-	"fn":       FUNCTION,
-	"let":      LET,
-	"if":       IF,
-	"else":     ELSE,
-	"return":   RETURN,
-	"true":     TRUE,
-	"false":    FALSE,
-	"struct":   FALSE,
-	"bit":      FALSE,
-	"const":    CONST,
-	"state":    STATE,
-	"default":  DEFAULT,
-	"control":  CONTROL,
-	"table":    TABLE,
-	"action":   ACTION,
-	"apply":    APPLY,
-	"inout":    INOUT,
-	"out":      OUT,
-	"metadata": METADATA,
-	"#include": PREPROCESS,
+	"action":       ACTION,
+	"apply":        APPLY,
+	"bit":          KEYWORD,
+	"bool":         KEYWORD,
+	"const":        CONST,
+	"control":      CONTROL,
+	"default":      DEFAULT,
+	"else":         ELSE,
+	"enum":         KEYWORD,
+	"error":        KEYWORD,
+	"extern":       KEYWORD,
+	"exit":         KEYWORD,
+	"false":        FALSE,
+	"header":       KEYWORD,
+	"header_union": KEYWORD,
+	"if":           IF,
+	"in":           KEYWORD,
+	"inout":        KEYWORD,
+	"int":          KEYWORD,
+	"match_kind":   KEYWORD,
+	"package":      KEYWORD,
+	"parser":       KEYWORD,
+	"out":          OUT,
+	"return":       RETURN,
+	"select":       KEYWORD,
+	"state":        STATE,
+	"struct":       KEYWORD,
+	"switch":       KEYWORD,
+	"table":        TABLE,
+	"transition":   KEYWORD,
+	"true":         TRUE,
+	"tuple":        KEYWORD,
+	"typedef":      KEYWORD,
+	"varbit":       KEYWORD,
+	"verify":       KEYWORD,
+	"void":         KEYWORD,
+	"metadata":     METADATA,
+	"#include":     PREPROCESS,
 }
 
 func LookupIdent(ident string) TokenType {
