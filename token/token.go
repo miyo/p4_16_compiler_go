@@ -17,10 +17,12 @@ const (
 	ASSIGN   = "="
 	PLUS     = "+"
 	MINUS    = "-"
-	SLASH    = "/"
 	ASTERISK = "*"
+	SLASH    = "/"
+	PERCENT  = "%"
 	AND      = "&"
 	OR       = "|"
+	XOR      = "^"
 
 	BANG      = "!"
 	COMMA     = ","
@@ -34,11 +36,18 @@ const (
 	LBRACKET = "["
 	RBRACKET = "]"
 
+	PP = "++"
+
 	LT = "<"
 	GT = ">"
+	LE = "<="
+	GG = ">="
 
-	EQ  = "=="
-	NEQ = "!="
+	EQ = "=="
+	NE = "!="
+
+	SHR = ">>"
+	SHL = "<<"
 
 	ANDAND  = "&&"
 	ORORNEQ = "||"

@@ -15,27 +15,22 @@ type Declaration interface {
 	declarationNode()
 }
 
-// Expression is interface for expressions
-type Expression interface {
-	Node
-	expressionNode()
-}
-
 type Type interface {
 	Node
 	typeNode()
 }
 
-type NonTypeName interface{
+type NonTypeName interface {
 	Name
 	nonTypeName()
 }
 
-type Name inteface{
+type Name interface {
 	name()
 }
 
 type Direction int
+
 const (
 	IN Direction = iota
 	OUT
@@ -62,4 +57,3 @@ type Identifier struct {
 func (i *Identifier) expressionNode() {}
 func (i *Identifier) TokenLiteral()   { return i.Token.Literal }
 func (i *Identifier) expressionNode() { return i.Value }
-

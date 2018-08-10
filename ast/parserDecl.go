@@ -19,16 +19,37 @@ type ParserDeclBlock struct {
 }
 
 type ParserState struct {
-	Annotations       []*Annotation
-	Name              Name
-	ParserStatements  []ParserStatement
-	TransitStatements []TransitStatement
+	Annotations          []*Annotation
+	Name                 Name
+	ParserStatements     []ParserStatement
+	TransitionStatements []*TransitionStatement
 }
 
 type ParserStatement interface {
 	parserStatement()
 }
 
-type TransitStatement interface {
-	transiteStatement()
+type TransitionStatement struct {
+	StateExpr StateExpression
 }
+
+type StateExpression struct {
+	Name
+	SelectExpr SelectExpression
+}
+
+type SelectExpression struct {
+	Expressions []Exression
+	SelectCases []SelectCase
+}
+
+type SelectCase struct {
+	KyesetExpression Expression
+	Name             string
+}
+
+type TupleKeysetExpression struct {
+	SimpleKeysetExpr SimpleKeysetExpression
+}
+
+func (*TupleKeysetExpression) expressionNode() {}
