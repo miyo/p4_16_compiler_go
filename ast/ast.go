@@ -9,10 +9,14 @@ type Node interface {
 	String() string
 }
 
-// Statement is interface for statements
 type Declaration interface {
 	Node
 	declarationNode()
+}
+
+type Statement interface {
+	Node
+	statementNode()
 }
 
 type Type interface {
